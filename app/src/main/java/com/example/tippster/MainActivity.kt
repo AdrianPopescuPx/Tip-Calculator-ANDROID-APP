@@ -1,11 +1,17 @@
 package com.example.tippster
 
+import android.annotation.SuppressLint
+import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
-
+private const val TAG = "MainActivity"
+private const val initialTipPercent = 15;
 class MainActivity : AppCompatActivity() {
 
     private lateinit var etBaseAmount: EditText
@@ -21,14 +27,29 @@ class MainActivity : AppCompatActivity() {
         tvTipAmount = findViewById(R.id.tvTipAmount)
         tvTipPercent = findViewById(R.id.TipP)
         tvTotalAmount = findViewById(R.id.tvTotalAmount)
+
+        seekBarTip.progress = initialTipPercent
+        tvTipPercent.text = "$initialTipPercent%"
         seekBarTip.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            @SuppressLint("SetTextI18n")
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                TODO("Not yet implemented")
+                Log.i(TAG, "onprogressChanged $p1")
+                tvTipPercent.text = "$p1%";
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
-            }   
+            }
             override fun onStopTrackingTouch(p0: SeekBar?) {
+            }
+        })
+        etBaseAmount.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                
             }
 
         })
