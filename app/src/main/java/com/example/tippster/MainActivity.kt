@@ -49,9 +49,24 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
             override fun afterTextChanged(p0: Editable?) {
-                
+                Log.i(TAG, "afterTextChanged $p0")
+                computeTipAndTotal()
             }
 
         })
+    }
+
+    private fun computeTipAndTotal() {
+        // 1. Getting the value of the bill and the tip percentage
+        val baseAmount = etBaseAmount.text.toString().toDouble()
+        val tipPercentage = seekBarTip.progress
+
+        // 2. Computing the tip with the base bill
+        val tipAmount = baseAmount * tipPercentage / 100
+        val totalAmount = baseAmount + tipAmount
+
+        // 3. Updating the UI
+        tvTipAmount.text = tipAmount.toString()
+        tvTotalAmount.text = totalAmount.toString()
     }
 }
