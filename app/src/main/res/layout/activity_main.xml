@@ -10,47 +10,88 @@
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:text="Welcome to the best Tip Calculator"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TipBase"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.052" />
 
     <TextView
         android:id="@+id/TipBase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="32dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="144dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
 
     <TextView
         android:id="@+id/TipP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="%"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="189dp" />
+        android:layout_marginTop="32dp"
+        android:text="24%"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TipBase"
+        app:layout_constraintTop_toBottomOf="@+id/TipBase" />
 
     <TextView
         android:id="@+id/TipLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Tip"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="236dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/TipP"
+        app:layout_constraintTop_toBottomOf="@+id/TipP" />
 
     <TextView
         android:id="@+id/TipTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Total"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="280dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/TipLabel"
+        app:layout_constraintTop_toBottomOf="@+id/TipLabel" />
+
+    <EditText
+        android:id="@+id/etBaseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="91dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="165dp" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19.96"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="220dp" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="103.11"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="276dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
