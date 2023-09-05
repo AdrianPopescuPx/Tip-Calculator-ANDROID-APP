@@ -11,14 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="35dp"
         android:layout_marginBottom="10dp"
         android:text="Welcome to the best Tip Calculator"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/TipBase"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/TipBase"
@@ -36,11 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="24%"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/TipBase"
-        app:layout_constraintTop_toBottomOf="@+id/TipBase" />
+        app:layout_constraintTop_toBottomOf="@+id/TipBase"
+        tools:text="24%" />
 
     <TextView
         android:id="@+id/TipLabel"
@@ -66,32 +68,42 @@
         android:id="@+id/etBaseAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginStart="32dp"
+        android:ems="8"
+        android:hint="Bill Amount"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="91dp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TipBase"
+        app:layout_constraintStart_toEndOf="@+id/TipBase"
+        app:layout_constraintTop_toTopOf="@+id/TipBase" />
 
     <SeekBar
         android:id="@+id/seekBarAmount"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="165dp" />
+        android:max="30"
+        app:layout_constraintBottom_toBottomOf="@+id/TipP"
+        app:layout_constraintStart_toStartOf="@+id/etBaseAmount"
+        app:layout_constraintTop_toTopOf="@+id/TipP" />
 
     <TextView
         android:id="@+id/tvTipAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="19.96"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="220dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/TipLabel"
+        app:layout_constraintStart_toStartOf="@+id/seekBarAmount"
+        app:layout_constraintTop_toTopOf="@+id/TipLabel"
+        tools:text="19.96" />
 
     <TextView
         android:id="@+id/tvTotalAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="103.11"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="276dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/TipTotal"
+        app:layout_constraintStart_toStartOf="@+id/tvTipAmount"
+        app:layout_constraintTop_toTopOf="@+id/TipTotal"
+        tools:text="103.11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
